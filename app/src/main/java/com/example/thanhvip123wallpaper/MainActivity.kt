@@ -2,37 +2,30 @@ package com.example.thanhvip123wallpaper
 
 import android.app.WallpaperManager
 import android.graphics.BitmapFactory
-import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.PopupWindow
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.base.ui.BaseActivity
+import com.example.base.ui.BaseAdapterInterface
 import com.example.thanhvip123wallpaper.databinding.ActivityMainBinding
 import com.example.thanhvip123wallpaper.databinding.DialogChooseWallpaperBinding
 import com.example.wallpaper.controller.WallpaperController
 import com.example.wallpaper.models.WallpaperModel
 import com.example.wallpaper.repository.WallpaperRepository
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val adapter = WallpaperAdapter()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+    override val layoutId: Int
+        get() = R.layout.activity_main
+
+    override val idMain: Int
+        get() = R.id.main
+
+    override fun setupView() {
         setupViewWallpaper()
     }
 
@@ -42,11 +35,10 @@ class MainActivity : AppCompatActivity() {
         binding.rcvWallpaper.layoutManager =
             GridLayoutManager(this, 2, RecyclerView.VERTICAL, false)
         adapter.setData(WallpaperRepository().listWallpaper)
-        adapter.setWallpaperAdapterInterface(object : WallpaperAdapterInterface {
+        adapter.setBaseAdapterInterface(object : BaseAdapterInterface<WallpaperModel> {
             override fun onClick(data: WallpaperModel) {
                 showPopupDeleteAllHistory(data)
             }
-
         })
     }
 
