@@ -17,4 +17,6 @@ class WallpaperRepository {
         WallpaperModel("11", R.drawable.wallpaper_11, "Wallpaper 11"),
         WallpaperModel("12", R.drawable.wallpaper_12, "Wallpaper 12")
     )
+
+    fun getWallpaperModelById(id: String) = listWallpaper.find { it.wallpaperID == id }
 }

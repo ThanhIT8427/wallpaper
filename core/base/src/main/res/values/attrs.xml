@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedLinearLayout">
+        <attr name="roundBackground" format="color"/>
+        <attr name="radius" format="float"/>
+        <attr name="roundStrokeColor" format="color"/>
+        <attr name="roundStrokeWidth" format="float"/>
+    </declare-styleable>
+</resources>

@@ -12,6 +12,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     abstract val layoutId: Int
     abstract fun setupView()
+    open fun setupObserver() {}
     open val idMain: Int? = null
     lateinit var binding: T
 
@@ -26,5 +27,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
                 insets
             }
         }
+        setupView()
+        setupObserver()
     }
 }
