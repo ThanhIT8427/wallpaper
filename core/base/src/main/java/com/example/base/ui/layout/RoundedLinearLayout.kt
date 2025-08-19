@@ -1,4 +1,4 @@
-package com.example.base.ui.textview
+package com.example.base.ui.layout
 
 import android.content.Context
 import android.graphics.Canvas
@@ -36,7 +36,8 @@ class RoundedLinearLayout @JvmOverloads constructor(
             val radius = getFloat(R.styleable.RoundedLinearLayout_radius, 50f)
             cornerRadius = radius
             val strokeColor = getColor(R.styleable.RoundedLinearLayout_roundStrokeColor, NO_COLOR)
-            val strokeWidth = getFloat(R.styleable.RoundedLinearLayout_roundStrokeWidth, DEFAULT_STROKE_WIDTH)
+            val strokeWidth =
+                getFloat(R.styleable.RoundedLinearLayout_roundStrokeWidth, DEFAULT_STROKE_WIDTH)
             strokePaint.apply {
                 this.strokeWidth = strokeWidth
                 this.color = strokeColor
@@ -48,7 +49,14 @@ class RoundedLinearLayout @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         rectF.set(0f, 0f, width.toFloat(), height.toFloat())
         canvas.drawRoundRect(rectF, cornerRadius, cornerRadius, backgroundPaint)
-        canvas.drawRoundRect(rectF, cornerRadius, cornerRadius, strokePaint)
+        canvas.drawRoundRect(
+            RectF(
+                rectF.left + strokePaint.strokeWidth,
+                rectF.top + strokePaint.strokeWidth,
+                rectF.right - strokePaint.strokeWidth,
+                rectF.bottom - strokePaint.strokeWidth
+            ), cornerRadius, cornerRadius, strokePaint
+        )
         super.onDraw(canvas)
     }
 

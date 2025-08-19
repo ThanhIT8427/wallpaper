@@ -33,7 +33,9 @@ class WallpaperSelectActivity : BaseActivity<ActivityWallpaperSelectBinding>() {
                 finish()
             }
             btnWatchAds.setOnClickListener {
-
+                ChoiceWallpaperScreenFragment().show(
+                    supportFragmentManager, "ChoiceWallpaperScreenFragment"
+                )
             }
         }
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,9 +10,65 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_round_24"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="28dp"
         tools:context=".ChoiceWallpaperScreenFragment">
 
+        <com.example.base.ui.layout.RoundedLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:paddingVertical="12dp"
+            app:roundStrokeColor="#EC4899"
+            app:roundStrokeWidth="4">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set On Home Screen"
+                android:textColor="#EC4899"
+                android:textSize="16sp" />
+
+        </com.example.base.ui.layout.RoundedLinearLayout>
+
+        <com.example.base.ui.layout.RoundedLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:paddingVertical="12dp"
+            app:roundStrokeColor="#EC4899"
+            app:roundStrokeWidth="4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set On Home Screen"
+                android:textColor="#EC4899"
+                android:textSize="16sp" />
+
+        </com.example.base.ui.layout.RoundedLinearLayout>
+
+        <com.example.base.ui.layout.RoundedLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:paddingVertical="12dp"
+            app:roundBackground="#EC4899">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set On Home Screen"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </com.example.base.ui.layout.RoundedLinearLayout>
 
     </LinearLayout>
 </layout>

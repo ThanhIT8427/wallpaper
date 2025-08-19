@@ -68,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHeight_percent="0.1">
 
-            <com.example.base.ui.textview.RoundedLinearLayout
+            <com.example.base.ui.layout.RoundedLinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="12dp"
@@ -86,10 +86,10 @@
                     android:text="Get Premium"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
-            </com.example.base.ui.textview.RoundedLinearLayout>
+            </com.example.base.ui.layout.RoundedLinearLayout>
 
 
-            <com.example.base.ui.textview.RoundedLinearLayout
+            <com.example.base.ui.layout.RoundedLinearLayout
                 android:id="@+id/btnWatchAds"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -111,7 +111,7 @@
                     android:text="Watch Ads"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
-            </com.example.base.ui.textview.RoundedLinearLayout>
+            </com.example.base.ui.layout.RoundedLinearLayout>
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
