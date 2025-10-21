@@ -1,19 +1,22 @@
 plugins {
-    alias(libs.plugins.android.library)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.android.hilt)
     alias(libs.plugins.android.ksp)
 }
 
 android {
-    namespace = "com.example.base"
+    namespace = "com.example.unsplash"
     compileSdk = 35
 
     defaultConfig {
+        applicationId = "com.example.unsplash"
         minSdk = 30
+        targetSdk = 35
+        versionCode = 1
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -36,13 +39,19 @@ android {
 
 dependencies {
 
+    implementation(project(":core:base"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // hilt
     // Hilt core
     implementation(libs.hilt.android)
 //    api(libs.androidx.hilt.work)
@@ -50,14 +59,4 @@ dependencies {
     // Compiler (ksp thay kapt)
     ksp(libs.hilt.android.compiler)
     ksp(libs.androidx.hilt.compiler)
-
-
-    // paging
-    api(libs.androidx.paging.runtime)
-
-    // Retrofit
-    api(libs.retrofit)
-    api(libs.converter.gson)
-    api(libs.okhttp)
-    api(libs.logging.interceptor)
 }

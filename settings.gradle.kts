@@ -23,3 +23,4 @@ rootProject.name = "ThanhVip123 Wallpaper"
 include(":app")
 include(":core:wallpaper")
 include(":core:base")
+include(":core:unsplash")
