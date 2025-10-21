@@ -1,4 +1,4 @@
-package com.example.base.ui
+package com.example.base.ui.layoutmanager
 
 import android.content.Context
 import androidx.recyclerview.widget.GridLayoutManager

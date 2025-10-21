@@ -44,6 +44,7 @@ dependencies {
 
     implementation(project(":core:wallpaper"))
     implementation(project(":core:base"))
+    implementation(project(":core:widget"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -60,4 +61,7 @@ dependencies {
     ksp("com.google.dagger:hilt-compiler:2.51.1")
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
+    implementation("net.orandja.shadowlayout:shadowlayout:1.0.1")
+
+    implementation(libs.androidx.workmanager)
 }

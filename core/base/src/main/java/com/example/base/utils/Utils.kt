@@ -1,6 +1,8 @@
-package com.example.base.ui.utils
+package com.example.base.utils
 
+import android.content.ContentResolver
 import android.content.Context
+import android.net.Uri
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
@@ -23,4 +25,14 @@ object Utils {
         popupWindow.elevation = 10f
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
     }
+}
+
+
+fun Context.resourceUri(resourceId: Int): Uri = with(resources) {
+    Uri.Builder()
+        .scheme(ContentResolver.SCHEME_ANDROID_RESOURCE)
+        .authority(getResourcePackageName(resourceId))
+        .appendPath(getResourceTypeName(resourceId))
+        .appendPath(getResourceEntryName(resourceId))
+        .build()
 }

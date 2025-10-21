@@ -1,7 +1,6 @@
-package com.example.base.ui
+package com.example.base.ui.itemdecoration
 
 import android.graphics.Rect
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
