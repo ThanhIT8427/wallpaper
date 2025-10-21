@@ -1,5 +1,7 @@
 [versions]
 agp = "8.10.1"
+blurhashAndroid = "1.0.1"
+glide = "5.0.5"
 hiltAndroid = "2.51.1"
 hiltWork = "1.2.0"
 kotlin = "2.0.21"
@@ -16,13 +18,16 @@ pagingRuntime = "3.3.6"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 lifecycleViewmodelKtx = "2.8.4"
+sketchBlurhash = "4.4.0-alpha01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltWork" }
 androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltWork" }
 androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pagingRuntime" }
+blurhash-android = { module = "io.github.hushenghao:blurhash-android", version.ref = "blurhashAndroid" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -37,6 +42,9 @@ okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+sketch-blurhash = { module = "io.github.panpf.sketch4:sketch-blurhash", version.ref = "sketchBlurhash" }
+sketch-http = { module = "io.github.panpf.sketch4:sketch-http", version.ref = "sketchBlurhash" }
+sketch-view = { module = "io.github.panpf.sketch4:sketch-view", version.ref = "sketchBlurhash" }
 
 
 [plugins]

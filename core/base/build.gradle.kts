@@ -60,4 +60,13 @@ dependencies {
     api(libs.converter.gson)
     api(libs.okhttp)
     api(libs.logging.interceptor)
+
+    // Glide
+    api(libs.glide)
+
+    // blurhash
+    api(libs.sketch.blurhash)
+    api(libs.sketch.view)
+    api(libs.sketch.http)
+    api(libs.blurhash.android)
 }
