@@ -5,37 +5,38 @@ import androidx.recyclerview.widget.DiffUtil
 import com.example.unsplash.R
 import com.example.unsplash.api.PhotoResponse
 import com.example.unsplash.databinding.ItemWidgetPhotoBinding
+import com.example.unsplash.local.PhotoEntity
 import com.example.unsplash.util.loadUnsplashImage
 
 
-class UnSplashPhotoAdapter(diffUtil: DiffUtil.ItemCallback<PhotoResponse>) :
-    BaseAdapter<ItemWidgetPhotoBinding , PhotoResponse>(diffUtil) {
+class UnSplashPhotoAdapter(diffUtil: DiffUtil.ItemCallback<PhotoEntity>) :
+    BaseAdapter<ItemWidgetPhotoBinding , PhotoEntity>(diffUtil) {
     override val layoutId: Int
         get() = R.layout.item_widget_photo
 
     override fun bind(
-        data: PhotoResponse ,
+        data: PhotoEntity ,
         binding: ItemWidgetPhotoBinding ,
         position: Int
     ) {
         Log.d("Thanh123","Data: $data")
         binding.imgWidgetPrevious.loadUnsplashImage(
-            data.blur_hash , data.urls.regular
+            data.blurhash , data.source
         )
     }
 }
 
-object PhotoDiffUtil : DiffUtil.ItemCallback<PhotoResponse>() {
+object PhotoDiffUtil : DiffUtil.ItemCallback<PhotoEntity>() {
     override fun areItemsTheSame(
-        oldItem: PhotoResponse ,
-        newItem: PhotoResponse
+        oldItem: PhotoEntity ,
+        newItem: PhotoEntity
     ): Boolean {
         return false
     }
 
     override fun areContentsTheSame(
-        oldItem: PhotoResponse ,
-        newItem: PhotoResponse
+        oldItem: PhotoEntity ,
+        newItem: PhotoEntity
     ): Boolean {
         return false
     }

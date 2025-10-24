@@ -69,4 +69,9 @@ dependencies {
     api(libs.sketch.view)
     api(libs.sketch.http)
     api(libs.blurhash.android)
+
+    // room
+    api(libs.androidx.room.runtime)
+    api(libs.androidx.room.paging)
+    api(libs.androidx.room.ktx)
 }
